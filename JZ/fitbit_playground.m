@@ -9,6 +9,9 @@ x = Accelerometer(:, 2);
 y = Accelerometer(:, 3); 
 z = Accelerometer(:, 4);
 
+grav1 = [x(1); y(1); z(1)]
+a = linsolve([0.01;0.01;norm(grav1)], grav1)
+b = (grav1)/[0.01;0.01;norm(grav1)]
 start_pos = [0,0,0];
 
 samp = 50;
