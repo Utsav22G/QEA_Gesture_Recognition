@@ -1,0 +1,5 @@
+clc; clear;
+
+%%      Read the data
+
+no_trem_circ =  load('CircleNoTremors1.mat')
