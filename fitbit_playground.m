@@ -1,7 +1,7 @@
 clear all
 close all
-load accel.mat
-load gyro.mat
+load accel_3d.mat
+load gyro_3d.mat
 
 
 t = Accelerometer(:, 1);
