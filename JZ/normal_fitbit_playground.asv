@@ -10,12 +10,12 @@ find_normal_acc(file1, 10, 0.4, 0.001, 0);
 file2 = "../2D_motion_data/TriangleWithTremors2.mat";
 find_normal_acc(file2, 10, 0.4, 0.001, 0);
 % 
-file1 = "../2D_motion_data/TriangleWithTremors4.mat";
+file1 = "../2D_motion_data/TriangleNoTremors1.mat";
 find_normal_acc(file1, 10, 0.4, 0.001, 0);
 
-file2 = "../2D_motion_data/TriangleWithTremors3.mat";
+file2 = "../2D_motion_data/TriangleNoTremors2.mat";
 find_normal_acc(file2, 10, 0.4, 0.001, 0);
-
+% 
 % file3 = "../2D_motion_data/CircleWithTremors1.mat";
 % find_normal_acc(file3, 10, 0.4, 0.001, 0);
 % 
