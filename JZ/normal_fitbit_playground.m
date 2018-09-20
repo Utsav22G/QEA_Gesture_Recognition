@@ -132,8 +132,8 @@ function a_lat = find_normal_acc(dataset, samp, freq_cutoff, attenuation, plotti
 
     a_long = dot(a, t_hat);
     a_lat = dot(a, n_hat);
-%     figure
-%     hold on
+    figure
+    hold on
 %     for index = 1:length(n_hat)
 %         quiver(0, 0, n_hat(1, index) * a_lat(index), n_hat(2, index) * a_lat(index))
 %         drawnow
