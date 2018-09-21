@@ -1,10 +1,11 @@
+
 plot(normalAcceleration)
 printspikes = detectPeaks(normalAcceleration)
 
 
 function numberOfSpikes = detectPeaks(data)
-    thresholdpos = max(data) / 3
-    thresholdneg = min(data) / 3
+    thresholdpos = max(data) / 3 + -1*min(data) / 10
+    thresholdneg = min(data) / 3 + -1*max(data) / 10
     atPeak = 0;
     atValley = 0;
     thunder = 0;
