@@ -1,45 +1,3 @@
-clear all
-close all
-
-% file1 = '../2D_motion_data/TriangleNoTremors1.mat';
-% find_normal_acc(file1, 100, 0.1, 1);
-% 
-file1 = "../2D_motion_data/TriangleWithTremors3.mat";
-find_normal_acc(file1, 10, 0.4, 0.001, 0);
-
-file2 = "../2D_motion_data/TriangleWithTremors2.mat";
-find_normal_acc(file2, 10, 0.4, 0.001, 0);
-% 
-file1 = "../2D_motion_data/TriangleNoTremors1.mat";
-find_normal_acc(file1, 10, 0.4, 0.001, 0);
-
-file2 = "../2D_motion_data/TriangleNoTremors2.mat";
-find_normal_acc(file2, 10, 0.4, 0.001, 0);
-% 
-% file3 = "../2D_motion_data/CircleWithTremors1.mat";
-% find_normal_acc(file3, 10, 0.4, 0.001, 0);
-% 
-% file3 = "../2D_motion_data/CircleWithTremors2.mat";
-% find_normal_acc(file3, 10, 0.4, 0.001, 0);
-% 
-% file3 = "../2D_motion_data/CircleNoTremors1.mat";
-% find_normal_acc(file3, 10, 0.4, 0.001, 0);
-% 
-% file3 = "../2D_motion_data/CircleNoTremors2.mat";
-% find_normal_acc(file3, 10, 0.4, 0.001, 0);
-% 
-% file1 = "../2D_motion_data/SquareWithTremors1.mat";
-% find_normal_acc(file1, 10, 0.4, 0.001, 0);
-% 
-% file2 = "../2D_motion_data/SquareWithTremors2.mat";
-% find_normal_acc(file2, 10, 0.4, 0.001, 0);
-%
-% file1 = "../2D_motion_data/SquareNoTremors1.mat";
-% find_normal_acc(file1, 10, 0.4, 0.01, 1);
-% 
-% file2 = "../2D_motion_data/SquareNoTremors2.mat";
-% find_normal_acc(file2, 10, 0.4, 0.01, 1);
-%%
 function a_lat = find_normal_acc(dataset, samp, freq_cutoff, attenuation, plotting)
     load(dataset);
     rot_trans = @(theta) [cos(theta), -sin(theta); sin(theta), cos(theta)];
@@ -138,11 +96,13 @@ function a_lat = find_normal_acc(dataset, samp, freq_cutoff, attenuation, plotti
 %         quiver(0, 0, n_hat(1, index) * a_lat(index), n_hat(2, index) * a_lat(index))
 %         drawnow
 %     end
-    figure
-    grid on
-    plot(t, a_lat);
-    title("normal acceleration: " + dataset, 'Interpreter', 'None')
-    grid on
+    if plotting
+        figure
+        grid on
+        plot(t, a_lat);
+        title("normal acceleration: " + dataset, 'Interpreter', 'None')
+        grid on
+    end
 
 end
 
