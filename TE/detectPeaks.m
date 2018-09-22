@@ -4,8 +4,8 @@ printspikes = detectPeaks(normalAcceleration)
 
 
 function numberOfSpikes = detectPeaks(data)
-    thresholdpos = max(data) / 3 + -1*min(data) / 10
-    thresholdneg = min(data) / 3 + -1*max(data) / 10
+    thresholdpos = 2.0;
+    thresholdneg = 0.9;
     atPeak = 0;
     atValley = 0;
     thunder = 0;
@@ -17,11 +17,11 @@ function numberOfSpikes = detectPeaks(data)
         if data(:,index) < thresholdneg
             atValley = 1;
         end
-        if(atValley == 1 && data(:,index) > 0)
+        if(atValley == 1 && data(:,index) > 1.0)
             thunder = thunder + 1;
             atValley = 0;
         end
-        if(atPeak == 1 && data(:,index) < 0)
+        if(atPeak == 1 && data(:,index) < 1.0)
             thunder = thunder + 1;
             atPeak = 0;
         end
