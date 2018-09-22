@@ -4,10 +4,20 @@ function a_lat = find_normal_acc(dataset, samp, freq_cutoff, attenuation, plotti
 
     t = 0:(1/Fs):((length(Accel)-1)/Fs);
     t = t(samp:end);
-    ax = Accel(:, 1) - ones(size(Accel(:, 1))) * Accel(1, 1);
-    ay = Accel(:, 2) - ones(size(Accel(:, 2))) * Accel(1, 2);
-    az = Accel(:, 3) - ones(size(Accel(:, 3))) * Accel(1, 3);
-    
+    ax = Accel(:, 1);
+    ay = Accel(:, 2);
+    az = Accel(:, 3);
+    if plotting
+       figure
+       hold on
+       plot(ax)
+       plot(ay)
+       plot(az)
+    end
+%     ax = ax - ones(size(Accel(:, 1))) * Accel(1, 1);
+%     ay = ay - ones(size(Accel(:, 2))) * Accel(1, 2);
+%     az = az - ones(size(Accel(:, 3))) * Accel(1, 3);
+%     
     ax = low_pass_filter(samp, ax)'; 
     ay = low_pass_filter(samp, ay)'; 
     az = low_pass_filter(samp, az)';
@@ -90,12 +100,7 @@ function a_lat = find_normal_acc(dataset, samp, freq_cutoff, attenuation, plotti
 
     a_long = dot(a, t_hat);
     a_lat = dot(a, n_hat);
-%     figure
-%     hold on
-%     for index = 1:length(n_hat)
-%         quiver(0, 0, n_hat(1, index) * a_lat(index), n_hat(2, index) * a_lat(index))
-%         drawnow
-%     end
+
     if plotting
         figure
         grid on

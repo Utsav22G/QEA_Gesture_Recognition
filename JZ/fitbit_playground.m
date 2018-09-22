@@ -1,17 +1,18 @@
 clear all
 close all
-load accel_3d.mat
-load gyro_3d.mat
+load("../2D_motion_data/TriangleNoTremors6Lin.mat")
+
+t = 0:(1/Fs):((length(Accel)-1)/Fs);
+
+x = Accel(:, 1); 
+y = Accel(:, 2); 
+z = Accel(:, 3);
 
 
-t = Accelerometer(:, 1);
-x = Accelerometer(:, 2); 
-y = Accelerometer(:, 3); 
-z = Accelerometer(:, 4);
 
 grav1 = [x(1); y(1); z(1)]
 a = linsolve([0.01;0.01;norm(grav1)], grav1)
-b = (grav1)/[0.01;0.01;norm(grav1)]
+b = [0.01;0.01;norm(grav1)]/grav1
 start_pos = [0,0,0];
 
 samp = 50;
@@ -79,7 +80,7 @@ z_pos = repmat(final_z,1,length(final_z));
 z_pos_new = tril(z_pos);
 z_pos_total = z_pos_new * ones(size(final_z));
 
-scatter3(x_pos_total, y_pos_total, z_pos_total)
+scatter(x_pos_total, y_pos_total)
 
 
 %%

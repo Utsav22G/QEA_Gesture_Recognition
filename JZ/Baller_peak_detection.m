@@ -1,26 +1,35 @@
 close all
 clear all
 
-file1 = "../2D_motion_data/TriangleWithTremors3.mat";
-peaks("TriangleWithTremors3", find_normal_acc(file1, 10, 0.4, 0.001, 0));
+file1 = "../2D_motion_data/TriangleNoTremors6Lin.mat";
+peaks("TriangleNoTremors6Lin", find_normal_acc(file1, 10, 0.4, 0.001, 1));
 
-file2 = "../2D_motion_data/TriangleWithTremors2.mat";
-peaks("TriangleWithTremors2", find_normal_acc(file2, 10, 0.4, 0.001, 0));
+file1 = "../2D_motion_data/TriangleWithTremors6Lin.mat";
+peaks("TriangleWithTremors6Lin", find_normal_acc(file1, 10, 0.4, 0.001, 1));
 
-file3 = "../2D_motion_data/TriangleWithTremors4.mat";
-peaks("TriangleWithTremors4", find_normal_acc(file3, 10, 0.4, 0.001, 0));
+file1 = "../2D_motion_data/CircleWithTremors6Lin.mat";
+peaks("CircleWithTremors6Lin", find_normal_acc(file1, 10, 0.4, 0.001, 1));
 
-file4 = "../2D_motion_data/TriangleWithTremors1.mat";
-peaks("TriangleWithTremors1", find_normal_acc(file3, 10, 0.4, 0.001, 0));
+file1 = "../2D_motion_data/CircleNoTremors6Lin.mat";
+peaks("CircleNoTremors6Lin", find_normal_acc(file1, 10, 0.4, 0.001, 1));
 
-file1 = "../2D_motion_data/CircleWithTremors1.mat";
-peaks("CirlceWithTremors1", find_normal_acc(file1, 10, 0.4, 0.001, 0));
-
-file2 = "../2D_motion_data/CircleWithTremors2.mat";
-peaks("CirlceWithTremors2", find_normal_acc(file2, 10, 0.4, 0.001, 0));
-
-file3 = "../2D_motion_data/CircleWithTremors3.mat";
-peaks("CirlceWithTremors3", find_normal_acc(file3, 10, 0.4, 0.001, 0));
+% file2 = "../2D_motion_data/TriangleWithTremors2.mat";
+% peaks("TriangleWithTremors2", find_normal_acc(file2, 10, 0.4, 0.001, 0));
+% 
+% file3 = "../2D_motion_data/TriangleWithTremors4.mat";
+% peaks("TriangleWithTremors4", find_normal_acc(file3, 10, 0.4, 0.001, 0));
+% 
+% file4 = "../2D_motion_data/TriangleWithTremors1.mat";
+% peaks("TriangleWithTremors1", find_normal_acc(file3, 10, 0.4, 0.001, 0));
+% 
+% file1 = "../2D_motion_data/CircleWithTremors1.mat";
+% peaks("CirlceWithTremors1", find_normal_acc(file1, 10, 0.4, 0.001, 0));
+% 
+% file2 = "../2D_motion_data/CircleWithTremors2.mat";
+% peaks("CirlceWithTremors2", find_normal_acc(file2, 10, 0.4, 0.001, 0));
+% 
+% file3 = "../2D_motion_data/CircleWithTremors3.mat";
+% peaks("CirlceWithTremors3", find_normal_acc(file3, 10, 0.4, 0.001, 0));
 
 % file1 = '../Normal_Acceleration_Data/CNT1.mat';
 % file2 = '../Normal_Acceleration_Data/CNT2.mat';
